@@ -113,7 +113,7 @@ def transaction(target, source, action, options=None,  update_time = None, lockt
     hidefile(lock_dir)
 
     res_act = False
-    if len(inspect.getargspec(action).args) == 4:
+    if len(inspect.signature(action).parameters) == 3:
         res_act = action(tmp, source, options)
     else:    
         res_act = action(tmp, source)
