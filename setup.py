@@ -4,13 +4,10 @@
 
 from setuptools import setup, find_packages
 
-with open('README.rst') as readme_file:
-    readme = readme_file.read()
-
-with open('HISTORY.rst') as history_file:
-    history = history_file.read()
-
-requirements = []
+requirements = [
+    'pytz',
+    'trans'
+]
 
 setup_requirements = [ ]
 
@@ -34,7 +31,6 @@ setup(
     description="Atomic action on files",
     install_requires=requirements,
     license="MIT license",
-    long_description=readme + '\n\n' + history,
     include_package_data=True,
     keywords='atomic_transformation',
     name='atomic_transformation',
