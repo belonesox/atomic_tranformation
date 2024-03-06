@@ -77,6 +77,9 @@ def short_uniq_filename_ext(source):
     sshortname = '-'.join([trans.trans(nameext[:4]), 
                            hash4string(nameext), 
                            trans.trans(nameext[-64:])])
+
+
+
     return os.path.join(dirname, sshortname) 
     
 
@@ -265,3 +268,16 @@ def unhidefile(filepath):
             pass
 
 
+def unicodeanyway(astr):
+    """
+     Try to guess input encoding and decode input Â«bytesÂ»-string to unicode string.
+    """
+    str_ = astr
+    for encoding in "utf-8", "windows-1251", "cp866", "koi-8":
+        try:
+            str_ = unicode(astr.decode(encoding))
+            break
+        except:
+            # pylint: disable-msg=W0702
+            pass
+    return str_
