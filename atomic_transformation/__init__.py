@@ -4,4 +4,4 @@ __author__ = """Stas Fomin"""
 __email__ = 'stas-fomin@yandex.ru'
 __version__ = '0.1.0'
 
-from .atomic_transformation import transaction
+from .atomic_transformation import transaction, unicodeanyway
